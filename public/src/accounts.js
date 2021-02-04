@@ -12,7 +12,7 @@ function sortAccountsByLastName(accounts) {
   );
 }
 
-function numberOfBorrows(account, books) {
+function getTotalNumberOfBorrows(account, books) {
   // assigining reference for id matching
   let acctNum = account["id"];
   // reduce elements of borrows data to create array of values
@@ -51,6 +51,6 @@ function getBooksPossessedByAccount(account, books, authors) {
 module.exports = {
   findAccountById,
   sortAccountsByLastName,
-  numberOfBorrows,
+  getTotalNumberOfBorrows,
   getBooksPossessedByAccount,
 };
