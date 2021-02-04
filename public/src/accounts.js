@@ -2,7 +2,11 @@ const { findAuthorById } = require("./books");
 
 function findAccountById(accounts, id) {
   return accounts.find(function (account) {
-    if (account.id === id) return account;
+    if (account.id === id) {
+      return account;
+    } else {
+      return null;
+    }
   });
 }
 
@@ -12,11 +16,11 @@ function sortAccountsByLastName(accounts) {
   );
 }
 
-function getTotalNumberOfBorrows(account, books) {
+function numberOfBorrows(account, books) {
   // assigining reference for id matching
-  let acctNum = account["id"];
+  const acctNum = account.id;
   // reduce elements of borrows data to create array of values
-  let borrowed = books.reduce((acc, { borrows: borrow }) => {
+  const borrowed = books.reduce((acc, { borrows: borrow }) => {
     // creating array of account ids
     const borrowId = borrow.map((element) => element.id);
     //
@@ -51,6 +55,6 @@ function getBooksPossessedByAccount(account, books, authors) {
 module.exports = {
   findAccountById,
   sortAccountsByLastName,
-  getTotalNumberOfBorrows,
+  numberOfBorrows,
   getBooksPossessedByAccount,
 };

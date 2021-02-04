@@ -1,7 +1,7 @@
 const { books } = require("../data/books.js");
 const { authors } = require("../data/authors.js");
 
-function getTotalBooksCount(books) {
+function totalBooksCount(books) {
   if (books.length === 0) {
     return 0;
   }
@@ -10,7 +10,7 @@ function getTotalBooksCount(books) {
 
 ////////////////
 
-function getTotalAccountsCount(accounts) {
+function totalAccountsCount(accounts) {
   if (accounts.length === 0) {
     return 0;
   }
@@ -19,8 +19,8 @@ function getTotalAccountsCount(accounts) {
 
 ////////////////
 
-function getBooksBorrowedCount(books) {
-  let count = books.reduce((acc, {borrows}) => 
+function booksBorrowedCount(books) {
+  const count = books.reduce((acc, {borrows}) => 
   {
     if (!borrows[0].returned) {
       acc += 1;
@@ -119,9 +119,9 @@ function getMostPopularAuthors(books, authors) {
 
 
 module.exports = {
-  getTotalBooksCount,
-  getTotalAccountsCount,
-  getBooksBorrowedCount,
+  totalBooksCount,
+  totalAccountsCount,
+  booksBorrowedCount,
   getMostCommonGenres,
   getMostPopularBooks,
   getMostPopularAuthors,

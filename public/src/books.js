@@ -8,7 +8,7 @@ function findBookById(books, id) {
 
 function partitionBooksByBorrowedStatus(books) {
   // initiate empty array
-  let returnedBooks = [];
+  const returnedBooks = [];
   // initiate another array that's equal to a filter on books
   //inside filter will be arrow function with if statement inside
   const borrowedBooks = books.filter((book) => {
